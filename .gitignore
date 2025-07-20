@@ -1,0 +1,7 @@
+# パッケージ関連を無視したい場合
+package.json
+package-lock.json
+
+# acc.js 関連
+**/contest.acc.js
+**/acc.js
