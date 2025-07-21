@@ -1,13 +1,14 @@
-// run.js
+// scripts/run-sample.js
 const { execSync } = require('child_process');
 
-const [contest, problem, sampleNum = '1'] = process.argv.slice(2); // 例: ["abc350", "a"]
+const [number, problem, sampleNum = '1'] = process.argv.slice(2); // ["350", "a", "1"]
 
-if (!contest || !problem) {
-  console.error('Usage: npm run log -- <contest> <problem> [sampleNum]');
+if (!number || !problem) {
+  console.error('Usage: npm run log -- <number> <problem> [sampleNum]');
   process.exit(1);
 }
 
+const contest = `abc${number}`;
 const inputPath = `${contest}/${problem}/tests/sample-${sampleNum}.in`;
 const execPath = `${contest}/${problem}/main.js`;
 
