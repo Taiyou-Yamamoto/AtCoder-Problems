@@ -16,3 +16,7 @@ npm run test -- <コンテスト名> <問題> [サンプル番号]
 // 例:
 npm run test -- abc350 a 
 ```
+
+ログインができない場合の対処
+こちらの記事を参照してCookieをsession.jsonに保存すると良い
+https://kaiyou9.com/acc_and_oj_login_failed/
