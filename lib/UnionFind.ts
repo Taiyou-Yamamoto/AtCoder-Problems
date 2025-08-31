@@ -25,4 +25,9 @@ class UnionFind {
       this.size[rootX] += this.size[rootY];
     }
   }
+
+  // x が属しているグループの人数を返す
+  getSize(x: number): number {
+    return this.size[this.find(x)];
+  }
 }
