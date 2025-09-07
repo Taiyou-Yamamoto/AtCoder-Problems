@@ -39,7 +39,7 @@ for (let startRow = 0; startRow < H; startRow++) {
     if (grid[startRow][startCol] === '.') hasDot = true;
 
     // 危険なマスでなく、まだ調べていないマスを見つけたら、そこからBFSで探索開始
-    if (!isDanger[startRow][startCol] && answerPerCell[startRow][startCol] === -1) {
+    if (grid[startRow][startCol] === '.' && !isDanger[startRow][startCol] && answerPerCell[startRow][startCol] === -1) {
       // ---- ここから “動画のやり方” のBFS本体 ----
       const queue = [[startRow, startCol]];
       let qIndex = 0;
