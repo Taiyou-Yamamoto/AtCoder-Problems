@@ -5,7 +5,7 @@
 npm run log -- <コンテスト名> <問題アルファベット> [サンプル番号]
 
 // 例:
-npm run log -- abc350 a 2
+npm run log -- 350 a 2
 ```
 
 
