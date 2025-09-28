@@ -14,10 +14,10 @@ const L = new Array(num);
 const R = new Array(num);
 
 for (let i = 0; i < num; i++) {
-  const l = lines[p++];
-  const r = lines[p++];
-  L[i] = l;
-  R[i] = r;
+    const l = lines[p++];
+    const r = lines[p++];
+    L[i] = l;
+    R[i] = r;
 }
 
 L.sort((a, b) => a - b);
@@ -27,13 +27,13 @@ let disjoint = 0; //交わらないペア数
 let counted = 0; //Lをどこまで数えたか
 
 for (let i = 0; i < num; i++) {
-  const r = R[i];
+    const r = R[i];
 
-  while (counted < num && L[counted] <= r) {
-    counted++;
-  }
+    while (counted < num && L[counted] <= r) {
+        counted++;
+    }
 
-  disjoint += num - counted;
+    disjoint += num - counted;
 }
 
 const total = (num * (num - 1)) / 2;
