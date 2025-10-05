@@ -96,9 +96,12 @@ pq.push([distCosts[1], 1]);
 // ダイクストラ法  スタートから近い順に探索していく
 while (pq.size) {
     const [currentCost, currentNode] = pq.pop();
+
+    // 今取り出した経路が、すでに更新された最短経路じゃない（＝古い）」場合はスルー
     if (currentCost !== distCosts[currentNode]) continue;
 
     for (const [nextNode, edgeCost] of graph[currentNode]) {
+        
         const nextCost = currentCost + edgeCost + A[nextNode];
         if (nextCost < distCosts[nextNode]) {
             distCosts[nextNode] = nextCost;
