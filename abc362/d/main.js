@@ -83,33 +83,33 @@ for (let j = 0; j < M; j++) {
 }
 
 // 各頂点への最短距離を格納する配列
-const dist = Array(N + 1).fill(Infinity);
+const distCosts = Array(N + 1).fill(Infinity);
 
-dist[1] = A[1];
+distCosts[1] = A[1];
 
 // 優先度付きキュー（ priority queue ）
 const pq = new MinHeap();
 
 // [コスト, 頂点]
-pq.push([dist[1], 1]);
+pq.push([distCosts[1], 1]);
 
 // ダイクストラ法  スタートから近い順に探索していく
 while (pq.size) {
     const [currentCost, currentNode] = pq.pop();
-    if (currentCost !== dist[currentNode]) continue;
+    if (currentCost !== distCosts[currentNode]) continue;
 
     for (const [nextNode, edgeCost] of graph[currentNode]) {
         const nextCost = currentCost + edgeCost + A[nextNode];
-        if (nextCost < dist[nextNode]) {
-            dist[nextNode] = nextCost;
+        if (nextCost < distCosts[nextNode]) {
+            distCosts[nextNode] = nextCost;
             pq.push([nextCost, nextNode]);
         }
     }
 }
 
 let out = [];
-for (let i = 2; i <= N; i++) out.push(String(dist[i]));
-console.log(out);
+for (let i = 2; i <= N; i++) out.push(String(distCosts[i]));
+console.log(out.join(' '));
 
 // [ '4', '9' ]なら
 //「頂点2までの最短コスト＝4」「頂点3までの最短コスト＝9」
