@@ -25,7 +25,6 @@ for (let i = 1; i <= max; i++) {
         if (!levelMap[idx - 1] && num === 1) {
             anc++;
         }
-        prev = num;
     });
 }
 console.log(anc);
