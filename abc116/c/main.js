@@ -13,7 +13,7 @@ let anc = 0;
 
 for (let i = 1; i <= max; i++) {
     const levelMap = Array(arr.length).fill(0);
-    // levelMap[i] = Array(arr.length).fill(0); //いらない
+    // levelMap[i] = Array(arr.length).fill(0); // 不必要
     arr.forEach((num, idx) => {
         if (num >= i) {
             // levelMap[num] += 1;
